@@ -36,23 +36,6 @@ The project demonstrates authentication, database operations, Row Level Security
 5. The dashboard retrieves the stored information from Supabase.
 6. Authenticated users can view the available login activity according to the configured security policies.
 
-## Project Structure
-
-```text
-supabase-auth-dashboard/
-│
-├── public/              # Static assets
-├── src/                 # React application
-│   ├── components/      # Reusable UI components
-│   ├── ...
-│
-├── supabase/            # Supabase configuration and backend functions
-├── index.html
-├── package.json
-├── vite.config.js
-└── README.md
-```
-
 ## Getting Started
 
 ### 1. Clone the repository
