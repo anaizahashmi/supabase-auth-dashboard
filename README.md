@@ -1,16 +1,107 @@
-# React + Vite
+# Supabase Auth Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack authentication dashboard built with **React and Supabase**. The application allows users to sign in using Google OAuth, stores login activity in a Supabase database, and displays registered users along with their login timestamps.
 
-Currently, two official plugins are available:
+The project demonstrates authentication, database operations, Row Level Security (RLS), RPC functions, and Supabase Edge Functions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+* Google OAuth authentication
+* Secure user authentication using Supabase Auth
+* Login activity tracking
+* Stores user details and login timestamps
+* Dashboard to view logged-in users
+* PostgreSQL database with Supabase
+* Row Level Security (RLS)
+* Supabase RPC functions
+* Supabase Edge Functions
+* Responsive React frontend
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+* **Frontend:** React.js, JavaScript, CSS
+* **Build Tool:** Vite
+* **Backend / Database:** Supabase, PostgreSQL
+* **Authentication:** Supabase Auth, Google OAuth
+* **Security:** Row Level Security (RLS)
+* **Backend Functions:** Supabase Edge Functions, RPC
+* **Deployment:** Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## How It Works
+
+1. The user opens the application and chooses **Continue with Google**.
+2. Supabase Auth handles the Google authentication process.
+3. After successful authentication, the user's information is stored/updated in the database.
+4. The login timestamp is recorded for tracking activity.
+5. The dashboard retrieves the stored information from Supabase.
+6. Authenticated users can view the available login activity according to the configured security policies.
+
+## Project Structure
+
+```text
+supabase-auth-dashboard/
+│
+├── public/              # Static assets
+├── src/                 # React application
+│   ├── components/      # Reusable UI components
+│   ├── ...
+│
+├── supabase/            # Supabase configuration and backend functions
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/anaizahashmi/supabase-auth-dashboard.git
+cd supabase-auth-dashboard
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure environment variables
+
+Create a `.env` file in the project root and add the required Supabase configuration:
+
+```env
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+Use your own Supabase project credentials. Do not commit private keys or secrets to the repository.
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+The application will be available on the local development URL provided by Vite.
+
+## Database & Security
+
+The application uses Supabase PostgreSQL for storing authentication-related data and login activity.
+
+**Row Level Security (RLS)** is used to control access to database records and ensure that database operations follow the configured authorization policies.
+
+RPC functions and Edge Functions are used where server-side or database-level processing is required.
+
+## Deployment
+
+The frontend is deployed using Vercel.
+
+**Live Demo:**
+https://supabase-assessment.vercel.app/
+
+## Purpose
+
+This project was built to gain practical experience with Supabase and implement a complete authentication workflow using modern full-stack web technologies.
