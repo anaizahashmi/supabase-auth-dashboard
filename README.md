@@ -97,10 +97,11 @@ RPC functions and Edge Functions are used where server-side or database-level pr
 
 ## Deployment
 
-The frontend is deployed using Vercel.
+The application is deployed on Vercel and connected to the Supabase backend.
 
 **Live Demo:**
 https://supabase-assessment.vercel.app/
+
 
 ## Purpose
 
